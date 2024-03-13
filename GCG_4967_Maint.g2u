@@ -1,0 +1,719 @@
+Program.Sub.ScreenSU.Start
+Gui.Form..Create
+Gui.Form..Size(20790,14490)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form..Caption("Router Maintenance")
+Gui.Form.frame1.Create(Frame)
+Gui.Form.frame1.Size(3600,1500)
+Gui.Form.frame1.Position(135,195)
+Gui.Form.frame1.Caption("Move/Add Rows")
+Gui.Form.lbl1.Create(Label,"From",True,585,255,0,225,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl1.Parent("frame1")
+Gui.Form.lbl1.ForeColor(0)
+Gui.Form.txtFrom.Create(TextBox,"",True,375,300,0,225,555,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtFrom.Parent("frame1")
+Gui.Form.txtFrom.NumericOnly(2)
+Gui.Form.txtFrom.TabStop(True)
+Gui.Form.txtFrom.TabIndex(1)
+Gui.Form.lbl2.Create(Label,"To",True,315,255,0,1050,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl2.Parent("frame1")
+Gui.Form.lbl2.ForeColor(0)
+Gui.Form.txtToBefore.Create(TextBox,"",True,375,300,0,1095,555,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtToBefore.Parent("frame1")
+Gui.Form.txtToBefore.NumericOnly(2)
+Gui.Form.txtToBefore.TabStop(True)
+Gui.Form.txtToBefore.TabIndex(2)
+Gui.Form.cmdMove.Create(Button)
+Gui.Form.cmdMove.Size(645,375)
+Gui.Form.cmdMove.Position(210,930)
+Gui.Form.cmdMove.Parent("frame1")
+Gui.Form.cmdMove.Caption("Move")
+Gui.Form.cmdMove.Event(Click,cmdMove_Click)
+Gui.Form.cmdMove.TabStop(True)
+Gui.Form.cmdMove.TabIndex(4)
+Gui.Form.cmdClear.Create(Button)
+Gui.Form.cmdClear.Size(600,375)
+Gui.Form.cmdClear.Position(1080,930)
+Gui.Form.cmdClear.Parent("frame1")
+Gui.Form.cmdClear.Caption("Clear")
+Gui.Form.cmdClear.Event(Click,cmdClear_Click)
+Gui.Form.cmdClear.TabStop(True)
+Gui.Form.cmdClear.TabIndex(3)
+Gui.Form.cmdAddRow.Create(Button)
+Gui.Form.cmdAddRow.Size(960,375)
+Gui.Form.cmdAddRow.Position(2475,945)
+Gui.Form.cmdAddRow.Caption("Add Row")
+Gui.Form.cmdAddRow.Event(Click,cmdAddRow_Click)
+Gui.Form.cmdAddRow.Parent("frame1")
+Gui.Form.cmdAddRow.TabStop(True)
+Gui.Form.cmdAddRow.TabIndex(5)
+Gui.Form.frame2.Create(Frame)
+Gui.Form.frame2.Size(4305,1500)
+Gui.Form.frame2.Position(3885,195)
+Gui.Form.frame2.Caption("Add/Delete Columns")
+Gui.Form.lblColumns.Create(Label,"# Columns",True,975,255,0,105,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblColumns.Parent("frame2")
+Gui.Form.txtColumns.Create(TextBox,"",True,375,300,0,165,555,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtColumns.NumericOnly(2)
+Gui.Form.txtColumns.Parent("frame2")
+Gui.Form.txtColumns.TabStop(True)
+Gui.Form.txtColumns.TabIndex(6)
+Gui.Form.cmdAddColumn.Create(Button)
+Gui.Form.cmdAddColumn.Size(1140,375)
+Gui.Form.cmdAddColumn.Position(660,525)
+Gui.Form.cmdAddColumn.Caption("Add Column")
+Gui.Form.cmdAddColumn.Event(Click,cmdAddColumn_Click)
+Gui.Form.cmdAddColumn.Parent("frame2")
+Gui.Form.cmdAddColumn.TabStop(True)
+Gui.Form.cmdAddColumn.TabIndex(7)
+Gui.Form.lblPrefixCol.Create(Label,"Prefix Column",True,1140,255,0,2175,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblPrefixCol.Parent("frame2")
+Gui.Form.txtPrefixColToDelete.Create(TextBox,"",True,375,300,0,2175,555,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtPrefixColToDelete.Parent("frame2")
+Gui.Form.txtPrefixColToDelete.NumericOnly(2)
+Gui.Form.txtPrefixColToDelete.TabStop(True)
+Gui.Form.txtPrefixColToDelete.TabIndex(8)
+Gui.Form.cmdDeleteColumn.Create(Button)
+Gui.Form.cmdDeleteColumn.Size(1275,375)
+Gui.Form.cmdDeleteColumn.Position(2670,525)
+Gui.Form.cmdDeleteColumn.Parent("frame2")
+Gui.Form.cmdDeleteColumn.Caption("Delete Column")
+Gui.Form.cmdDeleteColumn.Event(Click,cmdDeleteColumn_Click)
+Gui.Form.cmdDeleteColumn.TabStop(True)
+Gui.Form.cmdDeleteColumn.TabIndex(9)
+Gui.Form.lbl5.Create(Label,"(* This will Delete and Save)",True,2145,255,0,2115,1020,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl5.Parent("frame2")
+Gui.Form.frame3.Create(Frame)
+Gui.Form.frame3.Size(9945,1500)
+Gui.Form.frame3.Position(8325,195)
+Gui.Form.frame3.Caption("Import from Excel file")
+Gui.Form.txtExcelFile.Create(TextBox,"",True,8760,300,0,195,555,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtExcelFile.Parent("frame3")
+Gui.Form.txtExcelFile.TabStop(True)
+Gui.Form.txtExcelFile.TabIndex(10)
+Gui.Form.cmdBrowseExcel.Create(Button)
+Gui.Form.cmdBrowseExcel.Size(555,375)
+Gui.Form.cmdBrowseExcel.Position(9105,525)
+Gui.Form.cmdBrowseExcel.Parent("frame3")
+Gui.Form.cmdBrowseExcel.Caption("^")
+Gui.Form.cmdBrowseExcel.Event(Click,cmdBrowseExcel_Click)
+Gui.Form.cmdBrowseExcel.TabStop(True)
+Gui.Form.cmdBrowseExcel.TabIndex(11)
+Gui.Form.lbl3.Create(Label,"Max Column",True,975,255,0,5940,990,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl3.Parent("frame3")
+Gui.Form.txtMaxCol.Create(TextBox,"17",True,495,300,0,6930,930,True,1,"Arial",8,-2147483643,2)
+Gui.Form.txtMaxCol.Parent("frame3")
+Gui.Form.txtMaxCol.MaxLength(3)
+Gui.Form.txtMaxCol.NumericOnly(2)
+Gui.Form.txtMaxCol.TabStop(True)
+Gui.Form.txtMaxCol.TabIndex(12)
+Gui.Form.lbl4.Create(Label,"Max Row",True,795,255,0,7635,990,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl4.Parent("frame3")
+Gui.Form.txtMaxRow.Create(TextBox,"100",True,495,300,0,8460,930,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtMaxRow.Parent("frame3")
+Gui.Form.txtMaxRow.MaxLength(3)
+Gui.Form.txtMaxRow.NumericOnly(2)
+Gui.Form.txtMaxRow.TabStop(True)
+Gui.Form.txtMaxRow.TabIndex(13)
+Gui.Form.cmdImport.Create(Button)
+Gui.Form.cmdImport.Size(855,375)
+Gui.Form.cmdImport.Position(180,945)
+Gui.Form.cmdImport.Parent("frame3")
+Gui.Form.cmdImport.Caption("Import")
+Gui.Form.cmdImport.Event(Click,cmdImport_Click)
+Gui.Form.cmdImport.TabStop(True)
+Gui.Form.cmdImport.TabIndex(14)
+Gui.Form.lbl6.Create(Label,"File Path",True,840,255,0,195,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl6.Parent("frame3")
+Gui.Form.cmdExport.Create(Button)
+Gui.Form.cmdExport.Size(855,375)
+Gui.Form.cmdExport.Position(19515,1320)
+Gui.Form.cmdExport.Caption("Export")
+Gui.Form.cmdExport.Event(Click,cmdExport_Click)
+Gui.Form.cmdExport.TabStop(True)
+Gui.Form.cmdExport.TabIndex(15)
+Gui.Form.cmdSave.Create(Button)
+Gui.Form.cmdSave.Size(855,375)
+Gui.Form.cmdSave.Position(135,13545)
+Gui.Form.cmdSave.Caption("Save")
+Gui.Form.cmdSave.Event(Click,cmdSave_Click)
+Gui.Form.cmdSave.TabStop(True)
+Gui.Form.cmdSave.TabIndex(16)
+Gui.Form.gsSeq.Create(GsGridControl)
+Gui.Form.gsSeq.Size(20250,11670)
+Gui.Form.gsSeq.Position(135,1755)
+Gui.Form.gsSeq.Event(RowCellClick,gsSeq_RowCellClick)
+Gui.Form.gsSeq.TabStop(True)
+Gui.Form.gsSeq.TabIndex(17)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.iMaxCurrentPrefix.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'BN, Mar 14,2018
+'Project description is at the bottom
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+f.ODBC.Connection!conx.OpenCompanyConnection(600)
+f.Intrinsic.Control.CallSub("Set_Anchor")
+f.Intrinsic.Control.CallSub("Bind")
+gui.Form..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Set_Anchor.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError)
+'0 - None     	1 - Top     	2 - Bottom 		4 - Left     	8 - Right
+gui.Form.lbl1.Anchor(5)
+gui.Form.lbl2.Anchor(5)
+gui.Form.txtFrom.Anchor(5)
+gui.Form.txtToBefore.Anchor(5)
+gui.Form.cmdMove.Anchor(5)
+gui.Form.cmdClear.Anchor(5)
+gui.Form.txtExcelFile.Anchor(5)
+gui.Form.cmdBrowseExcel.Anchor(5)
+gui.Form.cmdImport.Anchor(5)
+gui.Form.lblColumns.Anchor(5)
+gui.Form.cmdAddColumn.Anchor(5)
+gui.Form.cmdAddRow.Anchor(5)
+gui.Form.lblPrefixCol.Anchor(5)
+gui.Form.txtPrefixColToDelete.Anchor(5)
+gui.Form.cmdDeleteColumn.Anchor(5)
+gui.Form.gsSeq.Anchor(15)
+gui.Form.cmdSave.Anchor(6)
+gui.Form.cmdExport.Anchor(9)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Set_Anchor.End
+
+Program.Sub.Bind.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError,sHeader,sDataType,sRet,sLines,sCells)
+v.Local..BulkDeclareBoolean(bInString)
+v.Local..BulkDeclareLong(iCnt,iPrefix)
+
+f.Intrinsic.UI.InvokeWaitDialog("Binding...")
+
+f.Intrinsic.Control.If(v.DataTable.R.Exists)
+	f.Data.DataTable.Close("R")
+f.Intrinsic.Control.EndIf
+
+'Database GCG_4967_Maint structure: Num INTEGER, WorkCenter CHAR(4), Description CHAR(20), Prefix LONGVARCHAR where Prefix is a string delimited with *!* of all the prefixes
+f.ODBC.Connection!conx.ExecuteAndReturn("Select Convert(IsNull(WorkCenter,'') + '*!*' + IsNull(Description,'') + '*!*' + IsNull(Prefix,''),SQL_Char)  from GCG_4967_Maint order by Num",v.Local.sRet)
+
+'No record found
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Data.DataTable.Create("R",True)
+	f.Data.DataTable.AddColumn("R","WorkCenter","String")
+	f.Data.DataTable.AddColumn("R","Description","String")
+	v.Global.iMaxCurrentPrefix.Set(0)
+	
+'Records found	
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Split(v.Local.sRet,"#$#",v.Local.sLines)
+	f.Intrinsic.String.Split(v.Local.sLines(0),"*!*",v.Local.sCells)
+	v.Local.sHeader.Set("WorkCenter*!*Description")
+	v.Local.sDataType.Set("String*!*String")
+	f.Intrinsic.Control.For(v.Local.iCnt,2,v.Local.sCells.UBound,1)
+		f.Intrinsic.Math.Sub(v.Local.iCnt,1,v.Local.iPrefix)
+		f.Intrinsic.String.Build("{0}*!*Prefix{1}",v.Local.sHeader,v.Local.iPrefix,v.Local.sHeader)
+		f.Intrinsic.String.Build("{0}*!*String",v.Local.sDataType,v.Local.sDataType)
+	f.Intrinsic.Control.Next(v.Local.iCnt)	
+	F.Data.DataTable.CreateFromString("R",v.Local.sRet,v.Local.sHeader,v.Local.sDataType,"*!*","#$#",True)	
+	F.Intrinsic.Math.Sub(V.Local.sCells.UBound,1,v.Global.iMaxCurrentPrefix)	
+f.Intrinsic.Control.EndIf
+
+f.Data.DataTable.AddColumn("R","Insert","String","Insert")
+f.Data.DataTable.AddColumn("R","Place","String","Place")
+f.Data.DataTable.AddColumn("R","Move","String","Move")
+f.Data.DataTable.AddColumn("R","Delete","String","Delete")
+f.Data.DataTable.AddColumn("R","Num","Long")
+f.Data.DataTable.SetSeries("R","Num",0,1)
+
+'Fill Description of WorkCenter (In case import from Excel an incorrect Description)
+'f.Data.Dictionary.CreateFromSQL("WCNameDict","conx","Select Machine, WC_Name from V_WorkCenters")
+'f.Data.Dictionary.SetDefaultReturn("WCNameDict","")
+'f.Data.DataTable.FillFromDictionary("R","WCNameDict","WorkCenter","Description")
+'f.Data.Dictionary.Close("WCNameDict")
+
+gui.Form.gsSeq.AddGridviewFromDatatable("RGV","R")
+f.Intrinsic.Control.CallSub("Format_Grid")
+gui.Form.gsSeq.MainView("RGV")
+
+f.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Bind.End
+
+Program.Sub.Format_Grid.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError,sPrefixColumns,sVisibleIndexColumns)
+v.Local.iCnt.Declare
+
+'Format gsSeq
+gui.Form.gsSeq.SuspendLayout()
+gui.Form.gsSeq.setGridViewProperty("RGV","AllowSort",False)
+gui.Form.gsSeq.setGridViewProperty("RGV","AllowFilter",False)
+gui.Form.gsSeq.SetGridViewProperty("RGV","EnableAppearanceOddRow",True)
+
+f.Intrinsic.Control.If(v.Global.iMaxCurrentPrefix,>,0)
+	'Build sPrefixColumns
+	f.Intrinsic.Control.For(v.Local.iCnt,1,v.Global.iMaxCurrentPrefix,1)
+		f.Intrinsic.Control.If(v.Local.iCnt,=,1)
+			f.Intrinsic.String.Build("Prefix{0}",v.Local.iCnt,v.Local.sPrefixColumns)
+		f.Intrinsic.Control.Else	
+			f.Intrinsic.String.Build("{0},Prefix{1}",v.Local.sPrefixColumns,v.Local.iCnt,v.Local.sPrefixColumns)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	'Width for sPrefixColumns
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsSeq","GV","RGV","sInputColumns",v.Local.sPrefixColumns,"sProperty","Width","sWidth","60")
+	'Editable for sPrefixColumns
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsSeq","GV","RGV","sInputColumns",v.Local.sPrefixColumns,"sProperty","Editable")
+	f.Intrinsic.String.Build("Insert,Move,Place,Delete,Num,WorkCenter,Description,{0}",v.Local.sPrefixColumns,v.Local.sVisibleIndexColumns)
+f.Intrinsic.Control.Else
+	v.Local.sVisibleIndexColumns.Set("Insert,Move,Place,Delete,Num,WorkCenter,Description")
+f.Intrinsic.Control.EndIf
+'VisibleIndex
+f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsSeq","GV","RGV","sInputColumns",v.Local.sVisibleIndexColumns,"sProperty","VisibleIndex")
+'Width
+f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsSeq","GV","RGV","sInputColumns","Num","sProperty","Width","sWidth","30")
+f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsSeq","GV","RGV","sInputColumns","Insert,Move,Delete,Place","sProperty","Width","sWidth","40")
+gui.Form.gsSeq.SetColumnProperty("RGV","WorkCenter","MinWidth","70")
+gui.Form.gsSeq.SetColumnProperty("RGV","Description","MinWidth","170")
+'Editorbutton
+gui.Form.gsSeq.ColumnEdit("RGV","Insert","editorbutton","Insert")
+gui.Form.gsSeq.ColumnEdit("RGV","Place","editorbutton","Place")
+gui.Form.gsSeq.ColumnEdit("RGV","Delete","editorbutton","Delete")
+gui.Form.gsSeq.ColumnEdit("RGV","Move","editorbutton","Move")
+'For_RowCellClick
+f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsSeq","GV","RGV","sInputColumns","Insert,Move,Place,Delete,WorkCenter","sProperty","For_RowCellClick")
+
+gui.Form.gsSeq.ResumeLayout()
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Format_Grid.End
+
+Program.Sub.FormatBulk.Start
+f.Intrinsic.Control.Try
+V.Local..BulkDeclareString(sError,sColumns,sHold)
+v.Local..BulkDeclareLong(iCnt)
+
+f.Intrinsic.String.Split(v.Args.sInputColumns,",",v.Local.sColumns)
+f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+	F.Intrinsic.Control.SelectCase(v.Args.sProperty)
+		F.Intrinsic.Control.Case("Width")
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"MinWidth",v.Args.sWidth)
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"MaxWidth",v.Args.sWidth)	
+		F.Intrinsic.Control.Case("Invisible")
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"Visible",False)
+		F.Intrinsic.Control.Case("VisibleIndex")
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"VisibleIndex",v.Local.iCnt)
+		F.Intrinsic.Control.Case("Caption")
+			f.Intrinsic.String.Split(v.Local.sColumns(v.Local.iCnt),"@!@",v.Local.sHold)
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sHold(0),"Caption",v.Local.sHold(1))
+		F.Intrinsic.Control.Case("Editable")		
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"AllowEdit","True")
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"ReadOnly","False")
+		F.Intrinsic.Control.Case("For_RowCellClick")
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"AllowEdit","False")
+			gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"ReadOnly","True")			
+		F.Intrinsic.Control.EndSelect		
+f.Intrinsic.Control.Next(v.Local.iCnt)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatBulk.End
+
+Program.Sub.gsSeq_RowCellClick.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError,sRet)
+
+F.Intrinsic.Control.SelectCase(v.Args.Column)
+	F.Intrinsic.Control.Case("Insert")
+		f.Data.DataTable.AddRow("R","Insert","Insert","Move","Move","Place","Place","Delete","Delete")
+		F.Data.DataTable.MoveRow("R",v.DataTable.R.RowCount--,v.Args.RowIndex)
+		f.Data.DataTable.SetSeries("R","Num",0,1)
+	F.Intrinsic.Control.Case("Move")
+		gui.Form.txtFrom.Text(v.Args.RowIndex)	
+	F.Intrinsic.Control.Case("Place")
+		gui.Form.txtToBefore.Text(v.Args.RowIndex)
+		f.Intrinsic.Control.CallSub(cmdmove_click)
+	F.Intrinsic.Control.Case("Delete")
+		f.Data.DataTable.DeleteRow("R",v.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("R")
+		f.Data.DataTable.SetSeries("R","Num",0,1)
+	f.Intrinsic.Control.Case("WorkCenter")
+		F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+		F.Intrinsic.UI.CommonBrowser(400,"",v.Local.sRet) 
+		 F.Intrinsic.Control.If(v.Local.sRet.IsCancel,=,False)
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			f.Data.DataTable.SetValue("R",v.Args.RowIndex,"WorkCenter",v.Local.sRet(0),"Description",v.Local.sRet(1))
+		 f.Intrinsic.Control.EndIf		
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+
+Program.Sub.gsSeq_RowCellClick.End
+
+Program.Sub.cmdImport_Click.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sText,sLine,sCell,sHeader,sDataType)
+v.Local..BulkDeclareLong(iCnt,iMaxCol,iMaxRow,iPrefix)
+
+v.Local.sHeader.Set("WorkCenter*!*Description")
+v.Local.sDataType.Set("String*!*String")
+
+f.Intrinsic.Control.If(v.Screen.Form!txtExcelFile.Text.Trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please select an Excel file")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+v.Local.iMaxCol.Set(v.Screen.Form!txtMaxCol.Text)
+v.Local.iMaxRow.Set(v.Screen.Form!txtMaxRow.Text)
+
+f.Intrinsic.Control.If(v.Local.iMaxCol,<,3)
+	f.Intrinsic.UI.Msgbox("Please enter the Max Column greater than 2")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.local.iMaxRow,<,2)
+	f.Intrinsic.UI.Msgbox("Please enter the Max Row greater than 1")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.UI.InvokeWaitDialog("Importing from Excel file...")
+F.Automation.MSExcel.ReadSpreadsheet(v.Screen.Form!txtExcelFile.Text.Trim,v.Screen.Form!txtMaxCol.Text,v.Screen.Form!txtMaxRow.Text,v.Local.sText)
+
+'Split the sheets of the Excel spreadsheet
+f.Intrinsic.String.Split(v.Local.sText,"&^&",v.Local.sText)
+
+'v.local.sText(0): Sheet1 of the Excel spreadsheet
+f.Intrinsic.String.Split(v.Local.sText(0),"$!$",v.Local.sLine)
+f.Intrinsic.String.Split(v.Local.sLine(0),"*!*",v.Local.sCell)
+
+f.Intrinsic.Control.If(v.Local.sCell.UBound,>,1)
+	f.Intrinsic.Math.Sub(v.Local.sCell.UBound,1,v.Global.iMaxCurrentPrefix)
+f.Intrinsic.Control.EndIf
+'Build sHeader, and sDataType
+f.Intrinsic.Control.For(v.Local.iCnt,2,v.Local.sCell.UBound,1)
+	f.Intrinsic.Math.Sub(v.Local.iCnt,1,v.Local.iPrefix)
+	f.Intrinsic.String.Build("{0}*!*Prefix{1}",v.Local.sHeader,v.Local.iPrefix,v.Local.sHeader)
+	f.Intrinsic.String.Build("{0}*!*String",v.Local.sDataType,v.Local.sDataType)
+f.Intrinsic.Control.Next(v.Local.iCnt)
+
+'Delete blank rows
+f.Intrinsic.Control.If(v.DataTable.PreR.Exists)
+	f.Data.DataTable.Close("PreR")
+f.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromString("PreR",V.Local.sText(0),v.Local.sHeader,v.Local.sDataType,"*!*","$!$",TRUE)
+f.Intrinsic.Control.If(V.DataView.R!R_DV.Exists,=,true)
+	Function.Data.DataView.Close("PreR", "PreR_DV")
+f.Intrinsic.Control.endif
+F.Data.DataView.Create("PreR","PreR_DV",22,"WorkCenter <> ''","")
+'Create data table R that exclude blank rows
+f.Intrinsic.Control.If(v.DataTable.R.Exists)
+	f.Data.DataTable.Close("R")
+f.Intrinsic.Control.EndIf
+f.Data.DataView.ToDataTable("PreR","PreR_DV","R",True)
+f.Data.DataTable.AddColumn("R","Insert","String","Insert")
+f.Data.DataTable.AddColumn("R","Place","String","Place")
+f.Data.DataTable.AddColumn("R","Move","String","Move")
+f.Data.DataTable.AddColumn("R","Delete","String","Delete")
+f.Intrinsic.Control.if(v.DataTable.R.RowCount,>,0)
+	f.Data.DataTable.DeleteRow("R",0)
+	F.Data.DataTable.AcceptChanges("R")
+f.Intrinsic.Control.EndIf
+f.Data.DataTable.AddColumn("R","Num","Long")
+f.Data.DataTable.SetSeries("R","Num",0,1)
+
+gui.Form.gsSeq.AddGridviewFromDatatable("RGV","R")
+f.Intrinsic.Control.CallSub("Format_Grid")
+gui.Form.gsSeq.MainView("RGV")
+
+f.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdImport_Click.End
+
+Program.Sub.cmdMove_Click.Start
+f.Intrinsic.Control.Try
+V.Local.sError.Declare
+v.Local..BulkDeclareLong(iFrom,iToBefore)
+
+f.Intrinsic.Control.If(v.Screen.Form!txtFrom.Text,=,"")
+	f.Intrinsic.UI.Msgbox("Please set the From Ordinal","No Ordinal set")
+	gui.Form.txtFrom.SetFocus
+	f.Intrinsic.Control.ExitSub	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.Form!txtToBefore.Text,=,"")
+	f.Intrinsic.UI.Msgbox("Please set the To Ordinal","No Ordinal set")
+	gui.Form.txtToBefore.SetFocus
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+v.Local.iFrom.Set(v.Screen.Form!txtFrom.Text)
+v.Local.iToBefore.Set(v.Screen.Form!txtToBefore.Text)
+
+f.Intrinsic.Control.If(v.Local.iFrom,>,v.DataTable.R.Rowcount--)
+	f.Intrinsic.UI.Msgbox("From Ordinal must be less than Row Count","Incorrect Ordinal")
+	gui.Form.txtFrom.SetFocus
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Local.iToBefore,>,v.DataTable.R.Rowcount--)
+	f.Intrinsic.UI.Msgbox("To Ordinal must be less than Row Count","Incorrect Ordinal")
+	gui.Form.txtToBefore.SetFocus
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+F.Data.DataTable.AcceptChanges("R")
+F.Data.DataTable.MoveRow("R",v.Local.iFrom,v.Local.iToBefore)
+f.Data.DataTable.SetSeries("R","Num",0,1)
+f.Intrinsic.Control.CallSub("cmdClear_Click")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdMove_Click.End
+
+Program.Sub.cmdAddRow_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+f.Data.DataTable.AddRow("R","Insert","Insert","Move","Move","Place","Place","Delete","Delete")
+f.Data.DataTable.SetSeries("R","Num",0,1)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddRow_Click.End
+
+Program.Sub.cmdBrowseExcel_Click.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sFile)
+
+Function.Intrinsic.UI.ShowOpenFileDialog("","*.xlsx",8,v.Local.sFile)
+f.Intrinsic.Control.If(V.Local.sFile.IsCancel,=,False)
+	gui.Form.txtExcelFile.Text(v.Local.sFile)
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseExcel_Click.End
+
+Program.Sub.cmdSave_Click.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError,sExp)
+v.Local..BulkDeclareLong(iCnt)
+
+f.Intrinsic.UI.InvokeWaitDialog("Deleting...")
+f.ODBC.Connection!conx.Execute("Delete from GCG_4967_Maint")
+
+f.Intrinsic.UI.ChangeWaitStatus("Saving...")
+f.Intrinsic.Control.For(v.Local.iCnt,1,v.Global.iMaxCurrentPrefix,1)
+	f.Intrinsic.Control.If(v.Local.iCnt,=,1)
+		f.Intrinsic.String.Build("IsNull(Prefix{0},'')",v.Local.iCnt,v.Local.sExp)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0} + '*!*' + IsNull(Prefix{1},'')",v.Local.sExp,v.Local.iCnt,v.Local.sExp)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Next(v.Local.iCnt)
+f.Data.DataTable.AddExpressionColumn("R","Prefix","String",v.Local.sExp)
+f.Data.DataTable.SaveToDB("R","conx","GCG_4967_Maint","","128","Num@!@Num*!*WorkCenter@!@WorkCenter*!*Description@!@Description*!*Prefix@!@Prefix")
+gui.Form.gsSeq.ClearRows("RGV")
+f.Intrinsic.UI.CloseWaitDialog
+
+f.Intrinsic.Control.CallSub("Bind")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.cmdAddColumn_Click.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError,sColumnAdded)
+v.Local..BulkDeclareLong(iColumnAdded,iCnt)
+
+v.Local.iColumnAdded.Set(v.Screen.Form!txtColumns.Text)
+f.Intrinsic.Control.If(v.Local.iColumnAdded,>,0)
+	f.Intrinsic.UI.InvokeWaitDialog("Adding columns...")
+	f.Intrinsic.Control.For(v.Local.iCnt,1,v.Local.iColumnAdded,1)
+		f.Intrinsic.Math.Add(v.Global.iMaxCurrentPrefix,1,v.Global.iMaxCurrentPrefix)
+		f.Intrinsic.String.Build("Prefix{0}",v.Global.iMaxCurrentPrefix,v.Local.sColumnAdded)
+		f.Data.DataTable.AddColumn("R",v.Local.sColumnAdded,"String")
+	f.Intrinsic.Control.Next(v.Local.iCnt)	
+	gui.Form.gsSeq.AddGridviewFromDatatable("RGV","R")
+	f.Intrinsic.Control.CallSub("Format_Grid")
+	gui.Form.gsSeq.MainView("RGV")	
+	f.Intrinsic.UI.CloseWaitDialog
+f.Intrinsic.Control.Else
+	f.Intrinsic.UI.Msgbox("Please enter the number of Prefix to add greater than 0","Number of Prefix needed")
+	gui.Form.txtColumns.SetFocus
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddColumn_Click.End
+
+Program.Sub.cmdDeleteColumn_Click.Start
+f.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError,sColToDelete,sExp,sColname,sFilter)
+v.Local..BulkDeclareLong(iPrefix,iCnt)
+
+v.Local.iPrefix.Set(v.Screen.Form!txtPrefixColToDelete.Text)
+f.Intrinsic.Control.If(v.Local.iPrefix,<,1,or,v.Local.iPrefix,>,v.Global.iMaxCurrentPrefix)
+	f.Intrinsic.ui.Msgbox("Prefix is invalid","Invalid")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+'Remove the column
+f.Intrinsic.UI.InvokeWaitDialog("Removing columns...")
+f.Intrinsic.String.Build("Prefix{0}",v.Local.iPrefix,v.Local.sColToDelete)
+f.Data.DataTable.RemoveColumn("R",v.Local.sColToDelete)
+F.Data.DataTable.AcceptChanges("R")
+
+f.ODBC.Connection!conx.Execute("Delete from GCG_4967_Maint")
+
+'Build the Expression
+f.Data.DataTable.Create("ColList",True)
+f.Data.DataTable.AddColumn("ColList","ColName","String")
+f.Data.DataTable.AddColumn("ColList","Num","Long")
+f.Intrinsic.Control.For(v.Local.iCnt,1,v.Global.iMaxCurrentPrefix,1)
+	f.Intrinsic.String.Build("Prefix{0}",v.Local.iCnt,v.Local.sColName)
+	f.Data.DataTable.AddRow("ColList","Num",v.Local.iCnt,"ColName",v.Local.sColname)
+f.Intrinsic.Control.Next(v.Local.iCnt)
+
+f.Intrinsic.String.Build("Num <> {0}",v.Local.iPrefix,v.Local.sFilter)
+F.Data.DataView.Create("ColList","ColList_DV",22,v.Local.sFilter,"")
+f.Data.DataView.ToString("ColList","ColList_DV","ColName","","*!*",v.Local.sExp)
+
+f.Intrinsic.Control.For(v.Local.iCnt,0,V.DataView.ColList!ColList_DV.Rowcount--,1)
+	f.Intrinsic.Control.If(v.Local.iCnt,=,0)
+		f.Intrinsic.String.Build("IsNull({0},'')",V.DataView.ColList!ColList_DV(v.Local.iCnt).ColName!FieldValString,v.Local.sExp)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0} + '*!*' + IsNull({1},'')",v.Local.sExp,V.DataView.ColList!ColList_DV(v.Local.iCnt).ColName!FieldValString,v.Local.sExp)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Next(v.Local.iCnt)
+F.Data.DataView.Close("ColList","ColList_DV")
+f.Data.DataTable.Close("ColList")
+
+f.Data.DataTable.AddExpressionColumn("R","Prefix","String",v.Local.sExp)
+f.Data.DataTable.SaveToDB("R","conx","GCG_4967_Maint","","128","Num@!@Num*!*WorkCenter@!@WorkCenter*!*Description@!@Description*!*Prefix@!@Prefix")
+gui.Form.gsSeq.ClearRows("RGV")
+
+f.Intrinsic.UI.CloseWaitDialog
+f.Intrinsic.Control.CallSub("Bind")
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDeleteColumn_Click.End
+
+Program.Sub.cmdExport_Click.Start
+F.Intrinsic.Control.Try
+v.Local..BulkDeclareString(sError,sFileExport,sMsg,sDate,sTime,sDir)
+v.Local..BulkDeclareBoolean(bExcel,bExists)
+
+f.Intrinsic.String.Build("{0}\RouterMaint",v.Caller.LocalGSSTempDir,v.Local.sDir)
+f.Intrinsic.File.DirExists(v.Local.sDir,v.Local.bExists)
+f.Intrinsic.Control.If(v.Local.bExists.Not)
+	f.Intrinsic.File.CreateDir(v.Local.sDir)
+f.Intrinsic.Control.EndIf
+
+'Format date time to create file name with extension date time stamp
+f.Intrinsic.String.Format(v.Ambient.Date,"MMDDYYYY",v.Local.sDate)
+f.Intrinsic.String.Format(v.Ambient.Now,"HhNnSs",v.Local.sTime)
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+F.Intrinsic.Control.If(V.Local.bExcel)
+	F.Intrinsic.String.Build("{0}\{1}_{2}.xlsx",v.Local.sDir,v.Local.sDate,v.Local.sTime,V.Local.sFileExport)
+	gui.Form.gsSeq.Export(V.Local.sFileExport,"xlsx")
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}\{1}_{2}.csv",v.Local.sDir,v.Local.sDate,v.Local.sTime,V.Local.sFileExport)
+	Gui.Form.gsSeq.Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.cmdClear_Click.Start
+gui.Form.txtFrom.Text("")
+gui.Form.txtToBefore.Text("")
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.Try
+v.Local.sError.Declare
+
+f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)	
+F.Intrinsic.Control.EndTry
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_4967_Maint.g2u$}$BAO$}$3/14/2018 8:41:21 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$
+'BN, Mar 14,2018
+'Project 4967 is to resequence the Router. The router will be resequenced as following:
+'For a particular Labor sequence, get its Workcenter and look up from the maintenance table GCG_4967_Maint.
+'If this Workcenter has some prefixes setup in the maintenance table, all the Material sequences with those prefixes will have to be put before that Labor sequence.
+
+'1/The script named GCG_4967_Main.g2u is to maintain the table that sets up the WorkCenter with prefixes of Material sequences.
+'It can pull data from an Excel spreadsheet(structure: WorkCenter,Description,Prefix1,Prefix2,etc.), modify/delete/Insert/Move rows and save to database GCG_4967_Maint table.
+
+'2/The script named GCG_4967_Resequence will be fired at Script 2 button of Router Header Master screen. As above, it will look up the database GCG_4967_Maint and resequence the router as such.
+'After resequencing, a screen will open having before and after resequencing router lines in which, users can manually move the sequences around if they want to change the order in a custom way. 
+'If user click Save in that screen, the router will be resequenced following what is displayed in new grid of the screen.
+
+'3/This project will not scope with the sequence having LMO = C/T/R
+Program.Sub.Comments.End
